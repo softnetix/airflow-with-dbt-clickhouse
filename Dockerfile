@@ -1,6 +1,6 @@
 FROM apache/airflow:3.0.2
 
-COPY requirements-base.txt /requirements-base.txt
+COPY requirements.txt /requirements.txt
 
 USER root
 RUN apt-get update \
@@ -9,4 +9,4 @@ RUN apt-get update \
 
 USER airflow
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r /requirements-base.txt
+    && pip install --no-cache-dir -r /requirements.txt
